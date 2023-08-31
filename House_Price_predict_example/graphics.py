@@ -10,7 +10,6 @@ from House_Price_predict_example.bivariate_statistics import df_house
 from scipy import stats
 
 
-
 def heterscedasticity(df_house, feature, label):
     model = ols(formula=(label + '~' + feature), data=df_house).fit()
 
@@ -58,4 +57,3 @@ pd.set_option('display.max_rows', 100)
 pd.set_option('display.max_columns', 100)
 pd.set_option('display.float_format', '{:.5f}'.format)
 print(df_house.head())
-

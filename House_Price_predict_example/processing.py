@@ -2,7 +2,6 @@ from src.config import df_house
 import pandas as pd
 
 
-
 def import_housig_data(url):
     df_house = pd.read_csv(url)
     df_house.drop(columns=['Id'], inplace=True)
@@ -44,7 +43,6 @@ def unistats(df_house):
                                     '-', '-', '-', '-', '-', '-', '-']
 
     return output_df_h.sort_values(by=['Numeric', 'Unique'], ascending=False)
-
 
 # print(df_house.info())
 # pd.set_option('display.max_rows', 100)
