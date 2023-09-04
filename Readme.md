@@ -52,5 +52,5 @@ The code includes functions for detecting heteroscedasticity in regression model
 The code includes a function called clean_bikebuyesr() that appears to perform some data cleaning and transformation tasks on a dataset. However, this function is defined but not explicitly called in the code.
 Overall, the code is a mix of data analysis, statistical testing, visualization, and linear regression modeling on an insurance-related dataset. It showcases various techniques commonly used in data science and statistical analysis.
 
-![Smoker vs non-smoker](Figure_1.png)
+![Smoker vs non-smoker](C:\Users\Phantom\Desktop\Python project\DS\EDA_Analysis\figures\Capture 1.1.JPG)
 
