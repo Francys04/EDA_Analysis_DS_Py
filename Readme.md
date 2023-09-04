@@ -51,7 +51,35 @@ The code includes functions for detecting heteroscedasticity in regression model
 
 The code includes a function called clean_bikebuyesr() that appears to perform some data cleaning and transformation tasks on a dataset. However, this function is defined but not explicitly called in the code.
 Overall, the code is a mix of data analysis, statistical testing, visualization, and linear regression modeling on an insurance-related dataset. It showcases various techniques commonly used in data science and statistical analysis.
+### Results for house price prediction
+#### Fig.1 Smoker vs non-Smoker
+<img src="House_Price_predict_example/figures/Capture.JPG">
 
+#### Fig.1 Bi variate_statistics
+<img src="House_Price_predict_example/figures/Capture.JPG">
+
+#### Fig.2 Sale_price
+<img src="House_Price_predict_example/figures/Capture 1 saleprice.JPG">
+
+#### Fig.1 Final statistic results
+<img src="House_Price_predict_example/figures/Figure_1.png">
+
+
+### Results about main program
+#### Fig.1 Smoker vs non-Smoker
 <img src="figures/Capture 1.1.JPG">
 
+<img src="figures/Capture 1.JPG">
 
+#### Fig.2 Data test sex-smoker
+<img src="figures/Capture 3 test sex_smoker.JPG">
+<img src="figures/Capture 2 test.JPG">
+
+#### Fig.3 ANOVA fun_clean
+<img src="figures/Capture 4 anove function clean.JPG">
+
+#### Fig.4 Quantitative data-graph
+<img src="figures/Capture 6 quatative graph.JPG">
+
+#### Fig.5 Linear regression
+<img src="figures/regressions liniar.JPG">
