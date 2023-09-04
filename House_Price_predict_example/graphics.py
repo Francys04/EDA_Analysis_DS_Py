@@ -1,13 +1,18 @@
-import pandas as pd
-import seaborn as sns
+import pandas as pd  # for data manipulation and analysis.
+import seaborn as sns  # for statistical data visualization.
 from House_Price_predict_example.bivariate_statistics import df_house
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt  # for statistical models and tests.
 from statsmodels.stats.diagnostic import het_breuschpagan
 from statsmodels.stats.diagnostic import het_white
 import statsmodels.api as sm
 from statsmodels.formula.api import ols
 from House_Price_predict_example.bivariate_statistics import df_house
 from scipy import stats
+
+"""Now, let's discuss the purpose of this code. It appears to be focused on data analysis and visualization of house 
+price data. It includes functions for checking heteroscedasticity, creating scatter plots with regression lines, and 
+preprocessing the dataset by renaming columns. The final part of the code sets display options for pandas and prints 
+the initial rows of the dataset for inspection."""
 
 
 def heterscedasticity(df_house, feature, label):
@@ -20,6 +25,9 @@ def heterscedasticity(df_house, feature, label):
     out_df.loc['White'] = white_test
     out_df.loc['Breusch-Pagan'] = bp_test
     return out_df.round(3)
+
+
+"""Function with specific feature (OverallQual) and label (SalePrice) from the df_house DataFrame."""
 
 
 def scatter(feature, label):

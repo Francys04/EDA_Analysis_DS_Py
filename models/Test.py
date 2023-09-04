@@ -1,9 +1,10 @@
-import matplotlib.pyplot as plt
-from scipy import stats
-import statistics as stat
-import seaborn as sns
-import pandas as pd
-from src.config import df
+import matplotlib.pyplot as plt  # Used for creating plots and graphs.
+from scipy import stats  # Used for statistical tests.
+import statistics as stat  # Used for calculating statistical measures.
+import seaborn as sns  # A data visualization library that works well with pandas and matplotlib.
+import pandas as pd  # Used for data manipulation.
+from src.config import df  # Import a DataFrame named df from a module called 'src.config'.
+
 
 # Start with simple data in lists, with the different nr of values in lists
 edu_PartialHS = [30000, 1000, 1000, 20000, 70000, 30000, 10000, 20000, 10000, 30000]

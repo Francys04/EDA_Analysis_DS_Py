@@ -3,6 +3,12 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
+"""The primary purpose of this code is to preprocess the 'Education', 'Commute Distance', and 'Purchased Bike' 
+columns in the DataFrame df_1, converting categorical data into numeric values for further analysis. However, there 
+are some issues with the code, as mentioned in lines 16, 18, and 20, where the casting of data types should be applied 
+to the DataFrame columns and assigned back to those columns. Additionally, the function clean_bikebuyesr()
+ is defined but not called in the code, so it needs to be called to perform the data cleaning and transformation."""
+
 
 # print(df_1.Education.unique())
 # ['Bachelors' 'Partial College' 'High School' 'Partial High School'

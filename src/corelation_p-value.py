@@ -1,5 +1,7 @@
-import numpy as np
-import pandas as pd
+"""The code essentially calculates and presents the strength and significance of the linear relationships between
+the 'charges' column and all other numeric columns in the DataFrame 'df'."""
+import numpy as np # numerical operations.
+import pandas as pd # Used for data manipulation and DataFrame handling.
 from src.config import df
 from scipy import stats
 
@@ -19,6 +21,13 @@ print(round(r, 4))  # 0.299
 print(round(p, 29))  # 5.0000000000000004e-29
 
 corr_df = pd.DataFrame(columns=['r', 'p'])
+
+"""Iterate through each column in the DataFrame 'df':
+Check if the column is numeric (excluding the 'charges' column).
+If the column is numeric, calculate the Pearson correlation coefficient ('r')
+and p-value ('p') between 'charges' and the current column.
+Round the 'r' and 'p' values to 3 decimal places.
+Add the 'r' and 'p' values to the 'corr_df' DataFrame with the column name as the index."""
 
 for col in df:
     print(col)

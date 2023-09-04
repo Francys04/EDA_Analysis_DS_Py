@@ -1,10 +1,13 @@
-import matplotlib.pyplot as plt
-from scipy import stats
-import pandas as pd
-from models.anova_test import clean_bikebuyesr
-import seaborn as sns
-from statsmodels.stats.multicomp import MultiComparison
-from scipy.stats import ttest_ind
+import matplotlib.pyplot as plt  # Used for creating plots.
+from scipy import stats  # for statistical functions.
+import pandas as pd  # Used for data manipulation.
+from models.anova_test import clean_bikebuyesr  # models.anova_test.clean_bikebuyesr is a function to clean the data.
+import seaborn as sns  # Used for statistical data visualization.
+from statsmodels.stats.multicomp import MultiComparison  # for post hoc analysis.
+from scipy.stats import ttest_ind  # for performing t-tests.
+
+"""This code combines statistical analysis techniques, including ANOVA and t-tests, with data visualization using 
+Seaborn and Matplotlib to analyze the relationship between education levels and bike purchases."""
 
 df_4 = clean_bikebuyesr()
 
@@ -96,7 +99,6 @@ textstr = f'       Anova\n'
 textstr += f'F:  {F.__round__(4)}\n'
 textstr += f'p:  {p.__round__(4)}\n'
 textstr += f'Sig. comparisons (Bonferonni)\n'
-
 
 threshold = 0.05 / len(tests)
 

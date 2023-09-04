@@ -1,26 +1,33 @@
-import pandas as pd
-import numpy as np
-from src.config import df
-import statsmodels.api as sm
+import pandas as pd # Use for data manipulation and DataFrame handling.
+import numpy as np #  Use for numerical operations.
+from src.config import df # Import a DataFrame named df from a module called 'src.config'.
+import statsmodels.api as sm #  for performing linear regression analysis.
 
-label = "charges"
+label = "charges" #  Defines the target variable.
 
+"""Create the target variable y as 'charges'.
+Create the independent variables x as 'age', 'bmi', and 'children' with an additional constant term."""
 y = df.charges
 x = df[['age', 'bmi', 'children']].assign(const=1)
 
+"""Create an ordinary least squares (OLS) linear regression model:
+model = sm.OLS(y, x): Create an OLS regression model using the target variable y and independent variables x."""
 model = sm.OLS(y, x)
-results = model.fit()
+results = model.fit() # Fit the regression model and print the summary statistics:
 print(results.summary())
 
 df['predictions'] = results.fittedvalues
 print(df)
 # single score prediction
 
-print(results.predict([19, 27.9, 0, 1]))
+print(results.predict([19, 27.9, 0, 1])) # Use the fitted regression model to make a prediction for a specific
+# set of input values (age=19, bmi=27.9, children=0, constant=1).
 # prediction = [6908.77753344]
 
 '''MLR with categorical values'''
-
+"""Convert the categorical columns 'sex', 'smoker', and 'region' into dummy variables, 
+dropping the first category in each column to avoid multicollinearity.
+Print the DataFrame with dummy variables:"""
 df = pd.get_dummies(df, columns=['sex', 'smoker', 'region'], prefix='', drop_first=True)
 
 print(df.head())
@@ -65,7 +72,7 @@ print(df.head())
 # Kurtosis:                       5.651   Cond. No.                     1.32e+19
 # ==============================================================================
 
-# or in this way
+# or in this way, handling categorical variables using a loop
 for col in df:
     if not pd.api.types.is_numeric_dtype(df[col]):
         df = pd.get_dummies(df, columns=[col], prefix=col, drop_first=True)

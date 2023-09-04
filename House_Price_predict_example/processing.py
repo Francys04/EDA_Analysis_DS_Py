@@ -1,6 +1,17 @@
 from src.config import df_house
 import pandas as pd
 
+"""Overall, this code defines two functions: one for importing housing data from a URL and another for calculating 
+various statistics for each column in the housing dataset. The statistics are stored in a DataFrame for analysis."""
+
+"""This function takes a URL as input, reads a CSV file from that URL, assigns it to a new DataFrame called df_house, 
+and drops the 'Id' column. It then returns this DataFrame."""
+
+"""In summary, this function systematically calculates and compiles various statistics for each column in a DataFrame, 
+whether the column contains numeric or non-numeric data. The statistics include count, missing values, unique values, 
+data type, numeric flag, mode, mean, minimum, quartiles, median, maximum, standard deviation, skewness, and kurtosis. 
+These statistics are stored in a new DataFrame for further analysis."""
+
 
 def import_housig_data(url):
     df_house = pd.read_csv(url)
@@ -11,7 +22,7 @@ def import_housig_data(url):
 print(df_house.head())
 
 
-def unistats(df_house):
+def unistats(df_house):  # Define the function unistats that takes the DataFrame df_house as an input parameter.
     output_df_h = pd.DataFrame(columns=['Count', 'Missing', 'Unique', 'Dtype', 'Numeric', 'Mode', 'Mean', 'Min', '25%',
                                         'Median', '75%', 'Max', 'Std', 'Skew', 'Kurt'])
     for col in df_house:

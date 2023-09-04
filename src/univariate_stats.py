@@ -1,7 +1,14 @@
-import pandas as pd
-from src.config import df
-import numpy as np
-from scipy.stats import kurtosis, skew
+"""This code appears to be focused on exploring and summarizing the statistics and characteristics
+of a dataset using the pandas and numpy libraries.
+It performs various operations on a DataFrame named df, which seems to contain data related to insurance charges. """
+import pandas as pd  # Used for data manipulation and DataFrame handling.
+from src.config import df  # Import a DataFrame named df from a module called 'src.config'.
+import numpy as np  # Used for numerical operations.
+from scipy.stats import kurtosis, skew  # the scipy.stats module for calculating kurtosis and skewness statistics.
+
+"""This line prints summary statistics for the DataFrame df, including the count, mean, standard deviation, 
+minimum, 25th percentile (Q1), median (50th percentile or Q2), 75th percentile (Q3), and maximum values 
+for each numeric column in the DataFrame."""
 # print(df.describe())
 #                age          bmi     children       charges
 # count  1338.000000  1338.000000  1338.000000   1338.000000
@@ -50,23 +57,25 @@ print(f'columns: {df.columns}')
 
 '''Boundaries'''
 
-print(df.charges.min())
-print(df.charges.quantile(.25))
-print(df.charges.quantile(.50))
-print(df.charges.quantile(.75))
-print(df.charges.max())
+print(df.charges.min())  # Prints the minimum value in the 'charges' column.
+print(df.charges.quantile(.25))  # Prints the 25th percentile (Q1) value of the 'charges' column.
+print(df.charges.quantile(.50))  # Prints the median (50th percentile or Q2) value of the 'charges' column.
+print(df.charges.quantile(.75))  # Prints the 75th percentile (Q3) value of the 'charges' column.
+print(df.charges.max())  # Prints the maximum value in the 'charges' column.
 
-print(df.charges.mean())
-print(df.charges.median())
-print(df.charges.mode().values[0])
+print(df.charges.mean())  # Prints the mean (average) value of the 'charges' column.
+print(df.charges.median())  # Prints the median value of the 'charges' column.
+print(df.charges.mode().values[0])  # Prints the mode (most frequently occurring) value of the 'charges' column.
 
+"""Prints the standard deviation of the 'charges' column using pandas."""
 print(df.charges.std())  # 12110.011236694001 => pandas
 
+"""Prints the standard deviation of the 'charges' column using numpy."""
 print(np.std(df.charges))  # 12105.484975561612 => numpy
 
-
+"""Calculates and prints the skewness of the 'charges' column. 
+The bias=False argument indicates that the calculation should be unbiased."""
 print(skew(df.charges, bias=False))  # 1.5158796580240383
-print(kurtosis(df.charges, bias=False)) # 1.6062986532967916
-
-
-
+"""Calculates and prints the kurtosis of the 'charges' column. 
+The bias=False argument indicates that the calculation should be unbiased."""
+print(kurtosis(df.charges, bias=False))  # 1.6062986532967916
